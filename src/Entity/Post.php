@@ -41,6 +41,11 @@ class Post
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $images;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +95,18 @@ class Post
     public function setMessage(?string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(string $images): self
+    {
+        $this->images = $images;
 
         return $this;
     }
